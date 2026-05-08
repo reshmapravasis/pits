@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-dark: #050505;
+    --accent-blue: #3b82f6;
+    --accent-emerald: #10b981;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: #e5e7eb;
+    margin: 0;
+}
+
+/* Glassmorphism utility */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.glass:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Gradients */
+.hero-glow {
+    background: radial-gradient(circle at 50% -20%, #1e3a8a 0%, #050505 80%);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #60a5fa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism for Product Cards */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 110, 253, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(4px);
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.overlay span {
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+/* Service Card Glow */
+.services .card:hover {
+    transform: translateY(-10px);
+    border-color: #0d6efd !important;
+    box-shadow: 0 10px 40px rgba(13, 110, 253, 0.2) !important;
+}
+
+.page-title {
+    position: relative;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.page-title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* This darkens the image to make text pop */
+}
+
+.page-title .container {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #60a5fa, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: #05070a;
+    /* Deep tech blue/black */
+    overflow-x: hidden;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    /* Very transparent white */
+    backdrop-filter: blur(12px);
+    /* This creates the frost effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle border */
+}
+
+/* Add a hover effect for the nav bar itself */
+nav div.glass:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(96, 165, 250, 0.3);
+    /* Glows blue on hover */
+    transition: all 0.3s ease;
+}

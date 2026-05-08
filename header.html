@@ -1,0 +1,56 @@
+<nav class="fixed w-full z-50 top-6 px-6 pointer-events-auto">
+    <div
+        class="max-w-6xl mx-auto glass rounded-full px-8 py-4 flex justify-between items-center border border-white/10 shadow-2xl">
+
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/img/Pravasis logo.webp" alt="Pravasis IT Solutions Logo"
+                class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+
+            <div class="text-xl font-extrabold tracking-tighter text-white hidden sm:block">
+                PITS<span class="text-blue-500"></span>
+            </div>
+        </a>
+
+        <div class="hidden md:flex space-x-10 text-sm font-medium">
+            <a href="index.html" class="nav-link text-white hover:text-blue-400 transition-colors">Home</a>
+            <a href="about.html" class="nav-link text-white hover:text-blue-400 transition-colors">About</a>
+            <a href="services.html" class="nav-link text-white hover:text-blue-400 transition-colors">Services</a>
+            <a href="products.html" class="nav-link text-white hover:text-blue-400 transition-colors">Products</a>
+            <a href="testimonials.html"
+                class="nav-link text-white hover:text-blue-400 transition-colors">Testimonials</a>
+            <a href="clients.html" class="nav-link text-white hover:text-blue-400 transition-colors">Clients</a>
+        </div>
+
+        <div class="hidden sm:block">
+            <a href="contact.html"
+                class="bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white px-6 py-2 rounded-full text-xs font-bold transition-all border border-blue-500/30">
+                Contact Us
+            </a>
+        </div>
+
+        <button class="md:hidden text-white">
+            <i class="bi bi-list text-2xl"></i>
+        </button>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const currentPage =
+            window.location.pathname.split("/").pop() || "index.html";
+
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach(link => {
+
+            const linkPage = link.getAttribute("href");
+
+            if (currentPage === linkPage) {
+                link.classList.add("active");
+            }
+
+        });
+
+    });
+</script>
