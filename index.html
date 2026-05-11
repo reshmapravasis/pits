@@ -16,7 +16,28 @@
 
     <div id="header-container"></div>
 
-    <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none"></div>
+    <!-- Enhanced Premium Animated Background -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <!-- Dramatic Glows -->
+        <div
+            class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-600/40 blur-[150px] animate-pulse">
+        </div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-emerald-500/30 blur-[150px] animate-pulse"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute top-[30%] left-[40%] w-[50%] h-[50%] rounded-full bg-purple-600/20 blur-[150px] animate-pulse"
+            style="animation-delay: 4s;"></div>
+
+        <!-- Decorative Morphing Shapes -->
+        <div class="design-shape w-96 h-96 top-20 left-[10%] opacity-20"></div>
+        <div class="design-shape w-[500px] h-[500px] bottom-40 right-[5%] opacity-10"
+            style="animation-delay: -2s; animation-duration: 12s;"></div>
+
+        <!-- Subtle Grid Pattern -->
+        <div class="absolute inset-0 opacity-[0.05]"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+
+    <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none opacity-80"></div>
 
     <main class="relative z-10">
 
@@ -40,30 +61,124 @@
             </div>
         </header>
 
-        <div class="py-10 bg-white/5 border-y border-white/10 overflow-hidden">
+        <a href="clients.html"
+            class="block py-10 bg-white/5 border-y border-white/10 overflow-hidden hover:bg-white/10 transition-colors cursor-pointer group/marquee">
             <div
-                class="animate-marquee whitespace-nowrap flex items-center gap-12 text-white/40 font-bold tracking-widest uppercase text-sm">
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-cpu"></i> SahakariMIS ERP</span>
+                class="animate-marquee whitespace-nowrap flex items-center gap-12 text-white/40 font-bold tracking-widest uppercase text-sm group-hover/marquee:text-white/60 transition-colors">
+                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Chakkittapara SCB
+                    LTD</span>
                 <span class="mx-4 text-white/20">|</span>
-                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> Cooperative Banking Solutions</span>
+                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> CSC Bank</span>
                 <span class="mx-4 text-white/20">|</span>
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-phone"></i> Flutter Mobile
-                    Apps</span>
+                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Kavanur SCB LTD</span>
                 <span class="mx-4 text-white/20">|</span>
-                <span class="flex items-center gap-4"><i class="bi bi-code-slash"></i> Laravel Backend
-                    Development</span>
+                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> Finmax Nidhi LTD</span>
                 <span class="mx-4 text-white/20">|</span>
-                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-cpu"></i> SahakariMIS ERP</span>
+                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Sambad Vikas Nidhi
+                    LTD</span>
                 <span class="mx-4 text-white/20">|</span>
-                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> Cooperative Banking Solutions</span>
+                <span class="flex items-center gap-4"><i class="bi bi-bank"></i> PMKWCS</span>
+                <span class="mx-4 text-white/20 text-blue-500">|</span>
+                <span class="flex items-center gap-4 text-blue-500"><i class="bi bi-bank"></i> Our Clients</span>
             </div>
-        </div>
+        </a>
 
-        <section id="about" class="py-24 px-6 relative overflow-hidden">
+        <!-- Why Choose Us Section -->
+        <section class="py-24 px-6 relative overflow-hidden">
+            <!-- Decorative Glow -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] pointer-events-none">
+            </div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Our Advantage</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-2">Why Choose PITS?</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">We combine deep domain expertise in cooperative
+                        banking with cutting-edge IT innovation to deliver unparalleled value.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Integrated Ecosystem -->
+                    <div class="glass p-8 rounded-[2.5rem] border border-white/10 hover:border-blue-500/50 transition-all duration-500 group"
+                        data-aos="fade-up">
+                        <div
+                            class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Integrated Ecosystem</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">A seamless digital environment where your ERP,
+                            mobile apps, and banking tools work in perfect harmony.</p>
+                    </div>
+
+                    <!-- Custom Solutions -->
+                    <div class="glass p-8 rounded-[2.5rem] border border-white/10 hover:border-emerald-500/50 transition-all duration-500 group"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="w-14 h-14 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Tailored Innovation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">From Custom Software to WhatsApp APIs, we build
+                            solutions that fit your specific institutional workflows.</p>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="glass p-8 rounded-[2.5rem] border border-white/10 hover:border-purple-500/50 transition-all duration-500 group"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="w-14 h-14 bg-purple-600/20 rounded-2xl flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Unfailing Support</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Our dedicated support call center ensures that
+                            help is always just a phone call away, 24/7.</p>
+                    </div>
+
+                    <!-- Security -->
+                    <div class="glass p-8 rounded-[2.5rem] border border-white/10 hover:border-red-500/50 transition-all duration-500 group"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="w-14 h-14 bg-red-600/20 rounded-2xl flex items-center justify-center text-red-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Enterprise Security</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">We implement multi-layered security protocols
+                            to safeguard sensitive financial and member data.</p>
+                    </div>
+
+                    <!-- Web Presence -->
+                    <div class="glass p-8 rounded-[2.5rem] border border-white/10 hover:border-orange-500/50 transition-all duration-500 group"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div
+                            class="w-14 h-14 bg-orange-600/20 rounded-2xl flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-window-sidebar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Digital Presence</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Modern, mobile-friendly Website Development
+                            that establishes your institution's authority online.</p>
+                    </div>
+
+                    <!-- Communication -->
+                    <div class="glass p-8 rounded-[2.5rem] border border-white/10 hover:border-cyan-500/50 transition-all duration-500 group"
+                        data-aos="fade-up" data-aos-delay="500">
+                        <div
+                            class="w-14 h-14 bg-cyan-600/20 rounded-2xl flex items-center justify-center text-cyan-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-chat-left-dots"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Seamless Outreach</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Scalable Bulk SMS and automated notification
+                            systems to keep your members engaged and informed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="about" class="py-24 px-6 relative overflow-hidden">
             <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-5 relative">
                     <div
-                        class="relative z-10 p-2 glass rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden group max-w-sm mx-auto">
+                        class="relative z-10 p-2 glass glow-card rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden group max-w-sm mx-auto">
                         <img src="assets/img/PravasisLTD.webp"
                             class="rounded-[2rem] w-full h-[450px] object-cover transition-all duration-700 group-hover:scale-105">
                     </div>
@@ -75,80 +190,65 @@
                         Society, we engineer digital trust for 500+ institutions.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
+        <section id="products-intro" class="py-24 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="glass p-12 md:p-20 rounded-[3.5rem] border border-white/10 relative overflow-hidden group">
 
-        <section id="products" class="py-24">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="group text-center">
-                        <div
-                            class="relative mx-auto max-w-[280px] aspect-square mb-8 overflow-hidden rounded-3xl border border-white/5 bg-gray-900 shadow-2xl transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-blue-500/20">
-                            <img src="assets/img/MIS.webp"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <a href="sahakarimis.html"
-                                    class="glass px-6 py-2 rounded-full text-sm font-bold">Explore More</a>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400">Sahakari MIS</h3>
+                    <div
+                        class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] group-hover:bg-blue-600/30 transition-all duration-700">
+                    </div>
+                    <div
+                        class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] group-hover:bg-purple-600/20 transition-all duration-700">
                     </div>
 
-                    <div class="group text-center">
-                        <div
-                            class="relative mx-auto max-w-[280px] aspect-square mb-8 overflow-hidden rounded-3xl border border-white/5 bg-gray-900 shadow-2xl transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-blue-500/20">
-                            <img src="assets/img/REC.webp"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <a href="rioeasy.html" class="glass px-6 py-2 rounded-full text-sm font-bold">Explore
-                                    More</a>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400">RioEasyCollect</h3>
-                    </div>
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
+                        <div data-aos="fade-right">
+                            <span class="text-blue-500 font-bold tracking-[0.3em] uppercase text-xs">PITS
+                                Ecosystem</span>
+                            <h2 class="text-4xl md:text-6xl font-extrabold text-white mt-6 mb-8 leading-tight">
+                                One Unified <span class="text-gradient">Financial</span> Architecture.
+                            </h2>
+                            <p class="text-gray-400 text-lg leading-relaxed mb-10">
+                                We bridge traditional cooperative values with next-gen technology, turning isolated
+                                workflows into a single, high-performance digital heartbeat.
+                            </p>
 
-                    <div class="group text-center">
-                        <div
-                            class="relative mx-auto max-w-[280px] aspect-square mb-8 overflow-hidden rounded-3xl border border-white/5 bg-gray-900 shadow-2xl transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-blue-500/20">
-                            <img src="assets/img/Mulla.webp"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <a href="mulla.html" class="glass px-6 py-2 rounded-full text-sm font-bold">Explore
-                                    More</a>
+                            <div class="flex flex-wrap gap-6 mb-10">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+                                        <i class="bi bi-cpu"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-white">Cloud Native</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500">
+                                        <i class="bi bi-shield-lock"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-white">Bank-Grade Security</span>
+                                </div>
                             </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400">Muttathe Mulla</h3>
-                    </div>
 
-                    <div class="group text-center">
-                        <div
-                            class="relative mx-auto max-w-[280px] aspect-square mb-8 overflow-hidden rounded-3xl border border-white/5 bg-gray-900 shadow-2xl transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-blue-500/20">
-                            <img src="assets/img/VyapariMithra.webp"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <a href="vyapari.html" class="glass px-6 py-2 rounded-full text-sm font-bold">Explore
-                                    More</a>
-                            </div>
+                            <a href="products.html"
+                                class="inline-flex items-center gap-4 bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold transition-all group/btn">
+                                View All Products
+                                <i class="bi bi-arrow-right transition-transform group-hover/btn:translate-x-2"></i>
+                            </a>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400">Vyapari Mithra</h3>
-                    </div>
 
-                    <div class="group text-center">
-                        <div
-                            class="relative mx-auto max-w-[280px] aspect-square mb-8 overflow-hidden rounded-3xl border border-white/5 bg-gray-900 shadow-2xl transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-blue-500/20">
-                            <img src="assets/img/EL.webp"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="relative" data-aos="zoom-in">
                             <div
-                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <a href="easylender.html" class="glass px-6 py-2 rounded-full text-sm font-bold">Explore
-                                    More</a>
+                                class="relative z-20 glass p-4 rounded-3xl border border-white/20 shadow-2xl transition-transform duration-500 hover:scale-105">
+                                <img src="assets/img/unified_ecosystem.png" alt="Unified Financial Ecosystem"
+                                    class="rounded-2xl w-full">
                             </div>
+                            <!-- Decorative blur behind image -->
+                            <div class="absolute inset-0 bg-blue-600/20 blur-[60px] -z-10 scale-90"></div>
                         </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400">Easy Lender</h3>
+
                     </div>
                 </div>
             </div>
@@ -165,6 +265,16 @@
             const res = await fetch(file);
             const html = await res.text();
             document.getElementById(id).innerHTML = html;
+
+            if (id === 'header-container') {
+                const currentPage = window.location.pathname.split("/").pop() || "index.html";
+                const navLinks = document.querySelectorAll(".nav-link");
+                navLinks.forEach(link => {
+                    if (link.getAttribute("href") === currentPage) {
+                        link.classList.add("active");
+                    }
+                });
+            }
         }
 
         loadComponent('header-container', 'header.html');
@@ -173,15 +283,49 @@
         // 2. Particle JS Config
         particlesJS("particles-js", {
             particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: ["#60a5fa", "#ffffff"] },
+                number: { value: 90, density: { enable: true, value_area: 1000 } },
+                color: { value: ["#3b82f6", "#10b981", "#60a5fa", "#ffffff"] },
                 shape: { type: "circle" },
-                opacity: { value: 0.4, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#60a5fa", opacity: 0.2, width: 1 },
-                move: { enable: true, speed: 1.2, direction: "none", out_mode: "out" }
+                opacity: {
+                    value: 0.8,
+                    random: true,
+                    anim: { enable: true, speed: 1.5, opacity_min: 0.4, sync: false }
+                },
+                size: {
+                    value: 4,
+                    random: true,
+                    anim: { enable: true, speed: 3, size_min: 0.5, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#60a5fa",
+                    opacity: 0.4,
+                    width: 1.5
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: { enable: true, rotateX: 600, rotateY: 1200 }
+                }
             },
-            interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "grab" } } },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 200, line_linked: { opacity: 0.6 } },
+                    push: { particles_nb: 4 }
+                }
+            },
             retina_detect: true
         });
     </script>
