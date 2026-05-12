@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
-    --bg-dark: #020617; /* Even deeper slate/black */
-    --accent-blue: #3b82f6;
-    --accent-emerald: #10b981;
-    --glass-bg: rgba(15, 23, 42, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --bg-dark: #05070a; 
+    --accent-blue: #01458C;
+    --accent-red: #D6191D;
+    --glass-bg: rgba(10, 15, 25, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(1, 69, 140, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(214, 25, 29, 0.1) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(1, 69, 140, 0.05) 0px, transparent 50%);
     color: #f8fafc;
     margin: 0;
     overflow-x: hidden;
@@ -23,46 +23,39 @@ body {
 /* Glassmorphism utility */
 .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid var(--glass-border);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass:hover {
-    border-color: rgba(59, 130, 246, 0.4);
+    border-color: rgba(1, 69, 140, 0.4);
+    background: rgba(10, 15, 25, 0.8);
 }
 
 /* Gradients */
 .hero-glow {
-    background: radial-gradient(circle at 50% -20%, #1e3a8a 0%, #050505 80%);
+    background: radial-gradient(circle at 50% -20%, #01458C 0%, #05070a 80%);
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #60a5fa, #34d399);
+    background: linear-gradient(135deg, #01458C 0%, #D6191D 50%, #01458C 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 5s linear infinite;
+}
+
+.text-gradient-red {
+    background: linear-gradient(to right, #D6191D, #ff4d4d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-emerald {
-    background: linear-gradient(to right, #10b981, #34d399);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-indigo {
-    background: linear-gradient(to right, #6366f1, #818cf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-cyan {
-    background: linear-gradient(to right, #06b6d4, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-purple {
-    background: linear-gradient(to right, #a855f7, #c084fc);
+.text-gradient-blue {
+    background: linear-gradient(to right, #01458C, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -77,7 +70,7 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(13, 110, 253, 0.8);
+    background: rgba(1, 69, 140, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,8 +94,8 @@ body {
 /* Service Card Glow */
 .services .card:hover {
     transform: translateY(-10px);
-    border-color: #0d6efd !important;
-    box-shadow: 0 10px 40px rgba(13, 110, 253, 0.2) !important;
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 10px 40px rgba(1, 69, 140, 0.2) !important;
 }
 
 .page-title {
@@ -115,8 +108,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    /* This darkens the image to make text pop */
+    background: rgba(5, 7, 10, 0.7);
 }
 
 .page-title .container {
@@ -125,13 +117,8 @@ body {
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
@@ -142,14 +129,6 @@ body {
 
 .animate-marquee:hover {
     animation-play-state: paused;
-}
-
-.glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 /* Custom Scrollbar */
@@ -167,7 +146,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: var(--accent-blue);
 }
 
 @keyframes float {
@@ -178,15 +157,6 @@ body {
 
 .float-animation {
     animation: float 6s ease-in-out infinite;
-}
-
-/* Hero section polish */
-.text-gradient {
-    background: linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #60a5fa 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 5s linear infinite;
 }
 
 @keyframes gradient-shift {
@@ -205,7 +175,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-blue);
+    background: var(--accent-red);
     transition: width 0.3s ease;
 }
 
@@ -215,7 +185,7 @@ body {
 }
 
 .nav-link.active {
-    color: var(--accent-blue) !important;
+    color: var(--accent-red) !important;
 }
 
 /* More Design Elements */
@@ -242,7 +212,7 @@ body {
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(45deg, #3b82f6, #10b981, #6366f1);
+    background: linear-gradient(45deg, var(--accent-blue), var(--accent-red), var(--accent-blue));
     border-radius: inherit;
     z-index: -1;
     opacity: 0;
@@ -253,6 +223,24 @@ body {
 .glow-card:hover::before {
     opacity: 0.5;
 }
+
+/* Global Tailwind Color Overrides to Brand Theme */
+.bg-blue-600, .bg-blue-500 { background-color: var(--accent-blue) !important; }
+.hover\:bg-blue-500:hover, .hover\:bg-blue-600:hover { background-color: #013a75 !important; }
+.text-blue-600, .text-blue-500, .text-blue-400 { color: #3b82f6 !important; } /* Keep text blue readable */
+.border-blue-600, .border-blue-500 { border-color: var(--accent-blue) !important; }
+.shadow-blue-600\/20 { --tw-shadow-color: rgba(1, 69, 140, 0.2) !important; }
+
+.bg-emerald-600, .bg-emerald-500 { background-color: var(--accent-red) !important; }
+.hover\:bg-emerald-500:hover, .hover\:bg-emerald-600:hover { background-color: #b51518 !important; }
+.text-emerald-600, .text-emerald-500, .text-emerald-400 { color: var(--accent-red) !important; }
+.border-emerald-600, .border-emerald-500 { border-color: var(--accent-red) !important; }
+.shadow-emerald-600\/20 { --tw-shadow-color: rgba(214, 25, 29, 0.2) !important; }
+
+/* Pulse animations colors */
+.bg-blue-600\/40 { background-color: rgba(1, 69, 140, 0.4) !important; }
+.bg-emerald-500\/30 { background-color: rgba(214, 25, 29, 0.3) !important; }
+.bg-purple-600\/20 { background-color: rgba(1, 69, 140, 0.2) !important; } /* Use blue for purple glows too for consistency */
 
 .section-divider {
     height: 1px;
