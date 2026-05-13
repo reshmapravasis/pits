@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/components.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-[#05070a] text-white overflow-x-hidden">
@@ -204,42 +207,26 @@
 
     <div id="footer-container"></div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Load external components
-        async function loadComponent(id, file) {
-            const res = await fetch(file + "?v=" + new Date().getTime());
-            const html = await res.text();
-            document.getElementById(id).innerHTML = html;
+        AOS.init({ duration: 1000, once: true });
+        loadComponent("header-container", "nav-header.html");
+        loadComponent("footer-container", "footer.html");
 
-            if (id === 'header-container') {
-                const currentPage = window.location.pathname.split("/").pop() || "index.html";
-                const navLinks = document.querySelectorAll(".nav-link");
-                navLinks.forEach(link => {
-                    if (link.getAttribute("href") === currentPage) {
-                        link.classList.add("active");
-                    }
-                });
-            }
-        }
-        loadComponent('header-container', 'header.html');
-        loadComponent('footer-container', 'footer.html');
-
-        // Particle configuration (Matches Index/About)
         particlesJS("particles-js", {
             particles: {
                 number: { value: 90, density: { enable: true, value_area: 1000 } },
-                color: { value: ["#3b82f6", "#10b981", "#60a5fa", "#ffffff"] },
+                color: { value: ["#3b82f6", "#10b981", "#6366f1", "#ffffff"] },
                 shape: { type: "circle" },
                 opacity: {
                     value: 0.8,
                     random: true,
-                    anim: { enable: true, speed: 1.5, opacity_min: 0.4, sync: false }
+                    anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
                 },
                 size: {
                     value: 4,
                     random: true,
-                    anim: { enable: true, speed: 3, size_min: 0.5, sync: false }
+                    anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
                 },
                 line_linked: {
                     enable: true,
@@ -250,13 +237,12 @@
                 },
                 move: {
                     enable: true,
-                    speed: 2,
+                    speed: 1.5,
                     direction: "none",
                     random: true,
                     straight: false,
                     out_mode: "out",
-                    bounce: false,
-                    attract: { enable: true, rotateX: 600, rotateY: 1200 }
+                    bounce: false
                 }
             },
             interactivity: {
@@ -265,10 +251,6 @@
                     onhover: { enable: true, mode: "grab" },
                     onclick: { enable: true, mode: "push" },
                     resize: true
-                },
-                modes: {
-                    grab: { distance: 200, line_linked: { opacity: 0.6 } },
-                    push: { particles_nb: 4 }
                 }
             },
             retina_detect: true

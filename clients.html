@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="assets/js/components.js?v=1.1"></script>
 </head>
 
 <body class="bg-[#05070a] text-white overflow-x-hidden">
@@ -71,40 +75,8 @@
         </section>
 
         <section class="max-w-6xl mx-auto pb-32 px-6">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
-
-                <div class="glass p-6 rounded-3xl border border-white/10 flex items-center justify-center bg-white/5 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500 group"
-                    data-aos="zoom-in">
-                    <div class="bg-white p-4 rounded-2xl w-full h-32 flex items-center justify-center shadow-inner">
-                        <img src="assets/Logo/Client1.webp" alt="Client Name"
-                            class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110">
-                    </div>
-                </div>
-
-                <div class="glass p-6 rounded-3xl border border-white/10 flex items-center justify-center bg-white/5 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500 group"
-                    data-aos="zoom-in" data-aos-delay="50">
-                    <div class="bg-white p-4 rounded-2xl w-full h-32 flex items-center justify-center shadow-inner">
-                        <img src="assets/Logo/Client2.webp" alt="Client Name"
-                            class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110">
-                    </div>
-                </div>
-
-                <div class="glass p-6 rounded-3xl border border-white/10 flex items-center justify-center bg-white/5 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500 group"
-                    data-aos="zoom-in" data-aos-delay="100">
-                    <div class="bg-white p-4 rounded-2xl w-full h-32 flex items-center justify-center shadow-inner">
-                        <img src="assets/Logo/Client3.webp" alt="Client Name"
-                            class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110">
-                    </div>
-                </div>
-
-                <div class="glass p-6 rounded-3xl border border-white/10 flex items-center justify-center bg-white/5 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500 group"
-                    data-aos="zoom-in" data-aos-delay="100">
-                    <div class="bg-white p-4 rounded-2xl w-full h-32 flex items-center justify-center shadow-inner">
-                        <img src="assets/Logo/Client4.webp" alt="Client Name"
-                            class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110">
-                    </div>
-                </div>
-
+            <div id="clients-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
+                <!-- Logos will be injected here by JS -->
             </div>
         </section>
 
@@ -112,40 +84,56 @@
 
     <div id="footer-container"></div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        async function loadComponent(id, file) {
-            const res = await fetch(file + "?v=" + new Date().getTime());
-            const html = await res.text();
-            document.getElementById(id).innerHTML = html;
+        // Define Client Names here for hover titles
+        const clientNames = {
+            1: "Client 1",
+            2: "Client 2",
+            // Add actual names here
+        };
 
-            if (id === 'header-container') {
-                const currentPage = window.location.pathname.split("/").pop() || "index.html";
-                const navLinks = document.querySelectorAll(".nav-link");
-                navLinks.forEach(link => {
-                    if (link.getAttribute("href") === currentPage) {
-                        link.classList.add("active");
-                    }
-                });
-            }
+        // Generate Client Logos Dynamically
+        const clientsGrid = document.getElementById('clients-grid');
+        for (let i = 1; i <= 48; i++) {
+            const delay = (i % 4) * 50; 
+            const name = clientNames[i] || `Client ${i}`;
+            const card = `
+                <div class="glass p-6 rounded-3xl border border-white/10 flex items-center justify-center bg-white/5 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500 group"
+                    data-aos="zoom-in" data-aos-delay="${delay}" title="${name}"
+                    data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="bg-white p-4 rounded-2xl w-full h-32 flex items-center justify-center shadow-inner pointer-events-none">
+                        <img src="assets/Logo/Client${i}.webp" alt="${name}" title="${name}"
+                            class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110">
+                    </div>
+                </div>
+            `;
+            clientsGrid.insertAdjacentHTML('beforeend', card);
         }
-        loadComponent('header-container', 'header.html');
-        loadComponent('footer-container', 'footer.html');
 
+        AOS.init({ duration: 1000, once: true });
+        console.log("Initializing components...");
+        loadComponent("header-container", "nav-header.html");
+        loadComponent("footer-container", "footer.html");
+        
+        // Initialize Tilt if needed (though data-tilt handles it automatically, this is safer for dynamic content)
+        if (window.VanillaTilt) {
+            VanillaTilt.init(document.querySelectorAll(".glass[data-tilt]"));
+        }
         particlesJS("particles-js", {
             particles: {
                 number: { value: 90, density: { enable: true, value_area: 1000 } },
-                color: { value: ["#3b82f6", "#10b981", "#60a5fa", "#ffffff"] },
+                color: { value: ["#3b82f6", "#10b981", "#6366f1", "#ffffff"] },
                 shape: { type: "circle" },
                 opacity: {
                     value: 0.8,
                     random: true,
-                    anim: { enable: true, speed: 1.5, opacity_min: 0.4, sync: false }
+                    anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
                 },
                 size: {
                     value: 4,
                     random: true,
-                    anim: { enable: true, speed: 3, size_min: 0.5, sync: false }
+                    anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
                 },
                 line_linked: {
                     enable: true,
@@ -156,13 +144,12 @@
                 },
                 move: {
                     enable: true,
-                    speed: 2,
+                    speed: 1.5,
                     direction: "none",
                     random: true,
                     straight: false,
                     out_mode: "out",
-                    bounce: false,
-                    attract: { enable: true, rotateX: 600, rotateY: 1200 }
+                    bounce: false
                 }
             },
             interactivity: {
@@ -171,15 +158,10 @@
                     onhover: { enable: true, mode: "grab" },
                     onclick: { enable: true, mode: "push" },
                     resize: true
-                },
-                modes: {
-                    grab: { distance: 200, line_linked: { opacity: 0.6 } },
-                    push: { particles_nb: 4 }
                 }
             },
             retina_detect: true
         });
     </script>
 </body>
-
 </html>
