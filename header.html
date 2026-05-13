@@ -166,11 +166,64 @@
             </a>
         </div>
 
-        <button class="md:hidden text-white">
+        <button id="mobile-menu-btn" 
+            onclick="const m = document.getElementById('mobile-menu'); m.classList.remove('hidden'); m.classList.add('flex'); setTimeout(() => m.classList.remove('translate-x-full'), 10);"
+            class="md:hidden text-white">
             <i class="bi bi-list text-2xl"></i>
         </button>
     </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu"
+    class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-2xl translate-x-full transition-transform duration-500 hidden flex-col md:hidden">
+    <div class="flex flex-col h-full p-8">
+        <div class="flex justify-between items-center mb-12">
+            <img src="assets/img/pits_logo.png" alt="Pravasis IT Solutions Logo" class="h-10 w-auto">
+            <button id="close-menu-btn" 
+                onclick="const m = document.getElementById('mobile-menu'); m.classList.add('translate-x-full'); setTimeout(() => { m.classList.add('hidden'); m.classList.remove('flex'); }, 500);"
+                class="text-white hover:text-red-500 transition-colors">
+                <i class="bi bi-x-lg text-2xl"></i>
+            </button>
+        </div>
+
+        <nav class="flex flex-col space-y-6">
+            <a href="index.html" class="mobile-link text-2xl font-bold text-white hover:text-blue-400 transition-colors">Home</a>
+            <a href="about.html" class="mobile-link text-2xl font-bold text-white hover:text-blue-400 transition-colors">About</a>
+            <a href="services.html" class="mobile-link text-2xl font-bold text-white hover:text-blue-400 transition-colors">Services</a>
+            <a href="products.html" class="mobile-link text-2xl font-bold text-white hover:text-blue-400 transition-colors">Products</a>
+            <a href="testimonials.html" class="mobile-link text-2xl font-bold text-white hover:text-blue-400 transition-colors">Testimonials</a>
+            <a href="clients.html" class="mobile-link text-2xl font-bold text-white hover:text-blue-400 transition-colors">Clients</a>
+            
+            <div class="pt-10">
+                <a href="contact.html"
+                    class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-4 rounded-2xl text-lg font-bold transition-all shadow-lg shadow-blue-600/20">
+                    Contact Us
+                </a>
+            </div>
+        </nav>
+
+        <div class="mt-auto pt-10 border-t border-white/10">
+            <p class="text-gray-500 text-sm mb-4">Connect with us</p>
+            <div class="flex gap-6">
+                <a href="#" class="text-white/60 hover:text-blue-400 text-xl"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-white/60 hover:text-blue-400 text-xl"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white/60 hover:text-blue-400 text-xl"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add event listeners to close menu on link click
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('mobile-link')) {
+            const m = document.getElementById('mobile-menu');
+            m.classList.add('translate-x-full');
+            setTimeout(() => { m.classList.add('hidden'); m.classList.remove('flex'); }, 500);
+        }
+    });
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
